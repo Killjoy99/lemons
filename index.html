@@ -6,11 +6,11 @@
   <title>Happy Birthday Priviledge 🎉</title>
   <style>
     :root{
-      --bg:#0a0214; /* deep cosmic purple */
-      --glow:#ff77e9; /* neon pink */
-      --glow2:#a96bff; /* violet */
-      --card:#12061c; /* darker terminal */
-      --accent:#ffb3ff; /* soft pastel pink */
+      --bg:#0a0214; 
+      --glow:#ff77e9; 
+      --glow2:#a96bff; 
+      --card:#12061c; 
+      --accent:#ffb3ff; 
       --muted:#d7b9ff;
     }
     html,body{
@@ -39,21 +39,38 @@
       100%{transform:translateY(-120vh) scale(0.9);opacity:0}
     }
 
+    /* butterflies */
+    .butterfly{
+      position:absolute;
+      width:28px;
+      height:28px;
+      background:url('butterfly.png') no-repeat center/contain;
+      pointer-events:none;
+      animation:fly linear infinite;
+    }
+    @keyframes fly{
+      0%{transform:translate(0,0) rotate(0deg);}
+      25%{transform:translate(50vw,-20vh) rotate(45deg);}
+      50%{transform:translate(80vw,10vh) rotate(-30deg);}
+      75%{transform:translate(20vw,20vh) rotate(60deg);}
+      100%{transform:translate(0,0) rotate(0deg);}
+    }
+
     /* wrapping */
-    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:4rem;position:relative;z-index:2}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:2rem;position:relative;z-index:2;flex-direction:column}
 
     /* cyber‑glow card */
     .card{
       width:min(900px,95%);
+      max-width:95%;
       background:rgba(17,4,30,0.55);
       backdrop-filter:blur(14px) saturate(160%);
-      border-radius:18px;padding:30px;
+      border-radius:18px;padding:20px;
       border:1px solid rgba(255,255,255,0.08);
       box-shadow:0 0 28px rgba(255,119,233,0.25), inset 0 0 26px rgba(169,107,255,0.15);
       position:relative;overflow:hidden;
     }
 
-    /* holo outline */
     .card::before{
       content:"";
       position:absolute;inset:-2px;
@@ -61,8 +78,7 @@
       z-index:-1;filter:blur(18px);opacity:0.28;
     }
 
-    /* photo */
-    .photo{width:100%;display:flex;justify-content:center;margin-bottom:22px}
+    .photo{width:100%;display:flex;justify-content:center;margin-bottom:20px}
     .photo img{
       width:180px;height:180px;object-fit:cover;border-radius:20px;
       box-shadow:0 0 20px var(--glow2),0 0 45px rgba(255,119,233,0.25);
@@ -74,8 +90,7 @@
       50%{transform:translateY(-10px)}
     }
 
-    /* terminal */
-    .term-header{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+    .term-header{display:flex;gap:6px;align-items:center;margin-bottom:12px}
     .dot{width:12px;height:12px;border-radius:50%;animation:glowDot 3s infinite ease-in-out}
     .dot.r{background:#ff5fa2}
     .dot.y{background:#ffbdff}
@@ -84,7 +99,7 @@
 
     .term{
       background:rgba(10,2,20,0.75);
-      border-radius:12px;padding:20px;font-size:16px;line-height:1.5;
+      border-radius:12px;padding:16px;font-size:16px;line-height:1.5;
       color:var(--accent);
       border:1px solid rgba(255,255,255,0.1);
       box-shadow:inset 0 0 16px rgba(169,107,255,0.2);
@@ -100,92 +115,87 @@
     .footer{margin-top:12px;color:var(--muted);font-size:13px;text-align:right;text-shadow:0 0 6px rgba(255,119,233,0.4)}
 
     @media (max-width:520px){
-      .term{font-size:14px;padding:16px}
+      .term{font-size:14px;padding:14px}
       .photo img{width:140px;height:140px}
+      .dot{width:10px;height:10px}
     }
   </style>
 </head>
 <body>
 
-  <div class="hearts" aria-hidden="true">
-    <div class="heart h1"> <!-- heart 1 -->
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff7aa2"/></svg>
-    </div>
-    <div class="heart h2">
+<div class="hearts" aria-hidden="true">
+  <div class="heart h1"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff7aa2"/></svg></div>
+  <div class="heart h2"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff9fb8"/></svg></div>
+  <div class="heart h3"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff5577"/></svg></div>
+</div>
+
+<div class="wrap">
+  <div class="card" role="main">
+    <div class="bg-heart">
       <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff9fb8"/></svg>
     </div>
-    <div class="heart h3">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff5577"/></svg>
+
+    <div class="photo">
+      <img src="lemons.jpg" alt="Priviledge" />
     </div>
-    <div class="heart h4">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff77a5"/></svg>
+
+    <div class="term-header" aria-hidden="true">
+      <div class="dot r"></div>
+      <div class="dot y"></div>
+      <div class="dot g"></div>
+      <div style="flex:1"></div>
+      <div class="muted">Python · terminal</div>
     </div>
-    <div class="heart h5">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ffb1c9"/></svg>
+
+    <div class="term" id="terminal">
+<pre id="message">
+Happy Birthday, Priviledge Wadzanai Maedzesera! 🎉💛
+
+From one IT nerd to another, you’re the perfect blend of
+clean code, good syntax, and unexpected features
+(except when you're acting like the lemons I call you 🍋😂).
+
+You debug my chaos, optimize my days,
+and somehow still handle my nonsense like a try/except block.
+
+I appreciate you, 
+I admire you, 
+and I love you.
+
+Happiest Birthday Lemons!🍋
+</pre>
     </div>
-    <div class="heart h6">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff8bb0"/></svg>
-    </div>
+
+    <div class="footer muted">Made with 🎉💛 and a bit of Pythonic flair</div>
   </div>
+</div>
 
-  <div class="wrap">
-    <div class="card" role="main">
-      <div class="bg-heart">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff9fb8"/></svg>
-      </div>
+<script>
+(function(){
+  const pre = document.getElementById('message');
+  const full = pre.textContent;
+  pre.textContent = '';
+  let i = 0;
+  const speed = 18;
+  function step(){
+    i++;
+    pre.textContent = full.slice(0,i);
+    if(i < full.length) requestAnimationFrame(()=>setTimeout(step,speed));
+  }
+  setTimeout(step,450);
+})();
 
-      <div class="photo">
-        <img src="lemons.jpg" alt="Priviledge" />
-      </div>
+// spawn some butterflies
+for(let j=0;j<5;j++){
+  const b = document.createElement('div');
+  b.className='butterfly';
+  b.style.top = `${Math.random()*80+10}vh`;
+  b.style.left = `${Math.random()*80+10}vw`;
+  b.style.animationDuration = `${10+Math.random()*10}s`;
+  document.body.appendChild(b);
+}
+</script>
 
-      <div class="term-header"" aria-hidden="true">
-        <div class="dot r"></div>
-        <div class="dot y"></div>
-        <div class="dot g"></div>
-        <div style="flex:1"></div>
-        <div class="muted">Drama · terminal</div>
-      </div>
-
-      <div class="term" id="terminal">
-            <pre id="message">
-                
-                Happy Birthday, Priviledge Wadzanai Maedzesera! 🎉💛
-
-                From one IT nerd to another, you’re the perfect blend of
-                clean code, good syntax, and unexpected features
-                (except when you're acting like the lemons I call you 🍋😂).
-
-                You debug my chaos, optimize my days,
-                and somehow still handle my nonsense like a try/except block.
-
-                I appreciate you, I admire you, and well keep at it and I'll end up loving you😂😂😂.
-
-                Happiest Birthday Lemons!🍋.
-        
-            </pre>
-      </div>
-
-      <div class="footer muted">Made with 🎉💛 and a bit of Pythonic flair</div>
-    </div>
-  </div>
-
-  <script>
-    // gentle type-in effect for the terminal message (no repeating)
-    (function(){
-      const pre = document.getElementById('message');
-      const full = pre.textContent;
-      pre.textContent = '';
-      let i = 0;
-      const speed = 18; // ms per char
-      function step(){
-        i++;
-        pre.textContent = full.slice(0,i);
-        if(i < full.length) requestAnimationFrame(()=>setTimeout(step,speed));
-      }
-      // start after a short delay so hearts are visible
-      setTimeout(step,450);
-    })();
-  </script>
-  <audio src="mahhala.mp3" autoplay loop></audio>
+<audio src="mahhala.mp3" autoplay loop></audio>
 </body>
 </html>
