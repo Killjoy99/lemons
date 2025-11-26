@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Priviledge 🎉</title>
+  <style>
+    :root{
+      --bg:#0a0214; /* deep cosmic purple */
+      --glow:#ff77e9; /* neon pink */
+      --glow2:#a96bff; /* violet */
+      --card:#12061c; /* darker terminal */
+      --accent:#ffb3ff; /* soft pastel pink */
+      --muted:#d7b9ff;
+    }
+    html,body{
+      height:100%;margin:0;
+      font-family:'JetBrains Mono', ui-monospace, monospace;
+      background:radial-gradient(circle at 20% 30%, #2a0b45, #0a0214 70%);
+      color:var(--accent);
+      overflow-x:hidden;
+    }
+
+    /* floating neon hearts */
+    .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .heart{position:absolute;bottom:-10%;width:32px;height:32px;opacity:0.9;
+      animation:floatUp linear infinite, pulse 3s ease-in-out infinite;
+      filter:drop-shadow(0 0 12px var(--glow));}
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.25)}
+    }
+
+    @keyframes floatUp{
+      0%{transform:translateY(0) scale(0.8);opacity:0}
+      10%{opacity:1}
+      50%{transform:translateY(-50vh) scale(1.1)}
+      100%{transform:translateY(-120vh) scale(0.9);opacity:0}
+    }
+
+    /* wrapping */
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:4rem;position:relative;z-index:2}
+
+    /* cyber‑glow card */
+    .card{
+      width:min(900px,95%);
+      background:rgba(17,4,30,0.55);
+      backdrop-filter:blur(14px) saturate(160%);
+      border-radius:18px;padding:30px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 28px rgba(255,119,233,0.25), inset 0 0 26px rgba(169,107,255,0.15);
+      position:relative;overflow:hidden;
+    }
+
+    /* holo outline */
+    .card::before{
+      content:"";
+      position:absolute;inset:-2px;
+      background:linear-gradient(130deg,var(--glow),var(--glow2),#ff93ff,var(--glow));
+      z-index:-1;filter:blur(18px);opacity:0.28;
+    }
+
+    /* photo */
+    .photo{width:100%;display:flex;justify-content:center;margin-bottom:22px}
+    .photo img{
+      width:180px;height:180px;object-fit:cover;border-radius:20px;
+      box-shadow:0 0 20px var(--glow2),0 0 45px rgba(255,119,233,0.25);
+      border:2px solid rgba(255,255,255,0.25);
+      animation:photoFloat 6s ease-in-out infinite;
+    }
+    @keyframes photoFloat{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+
+    /* terminal */
+    .term-header{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+    .dot{width:12px;height:12px;border-radius:50%;animation:glowDot 3s infinite ease-in-out}
+    .dot.r{background:#ff5fa2}
+    .dot.y{background:#ffbdff}
+    .dot.g{background:#c840ff}
+    @keyframes glowDot{0%,100%{filter:drop-shadow(0 0 4px var(--glow))}50%{filter:drop-shadow(0 0 12px var(--glow2))}}
+
+    .term{
+      background:rgba(10,2,20,0.75);
+      border-radius:12px;padding:20px;font-size:16px;line-height:1.5;
+      color:var(--accent);
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:inset 0 0 16px rgba(169,107,255,0.2);
+      white-space:pre-wrap;overflow:auto;
+      text-shadow:0 0 6px rgba(255,119,233,0.55);
+      animation:fadeIn 1.4s ease;
+    }
+
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+
+    .bg-heart{position:absolute;right:-4%;top:-6%;opacity:0.12;transform:rotate(-15deg);width:280px;height:280px;pointer-events:none;filter:drop-shadow(0 0 40px var(--glow2));}
+
+    .footer{margin-top:12px;color:var(--muted);font-size:13px;text-align:right;text-shadow:0 0 6px rgba(255,119,233,0.4)}
+
+    @media (max-width:520px){
+      .term{font-size:14px;padding:16px}
+      .photo img{width:140px;height:140px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts" aria-hidden="true">
+    <div class="heart h1"> <!-- heart 1 -->
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff7aa2"/></svg>
+    </div>
+    <div class="heart h2">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff9fb8"/></svg>
+    </div>
+    <div class="heart h3">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff5577"/></svg>
+    </div>
+    <div class="heart h4">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff77a5"/></svg>
+    </div>
+    <div class="heart h5">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ffb1c9"/></svg>
+    </div>
+    <div class="heart h6">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff8bb0"/></svg>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card" role="main">
+      <div class="bg-heart">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-0.2 9.6 3 4 7.5 6 9.6 7 10 9.5 12 11c2-1.5 2.4-4 4.5-5C21 4 24.2 9.6 21 13.5 19 16.65 12 21 12 21z" fill="#ff9fb8"/></svg>
+      </div>
+
+      <div class="photo">
+        <img src="lemons.jpg" alt="Priviledge" />
+      </div>
+
+      <div class="term-header"" aria-hidden="true">
+        <div class="dot r"></div>
+        <div class="dot y"></div>
+        <div class="dot g"></div>
+        <div style="flex:1"></div>
+        <div class="muted">Drama · terminal</div>
+      </div>
+
+      <div class="term" id="terminal">
+            <pre id="message">
+                
+                Happy Birthday, Priviledge Wadzanai Maedzesera! 🎉💛
+
+                From one IT nerd to another, you’re the perfect blend of
+                clean code, good syntax, and unexpected features
+                (except when you're acting like the lemons I call you 🍋😂).
+
+                You debug my chaos, optimize my days,
+                and somehow still handle my nonsense like a try/except block.
+
+                I appreciate you, I admire you, and well keep at it and I'll end up loving you😂😂😂.
+
+                Happiest Birthday Lemons!🍋.
+        
+            </pre>
+      </div>
+
+      <div class="footer muted">Made with 🎉💛 and a bit of Pythonic flair</div>
+    </div>
+  </div>
+
+  <script>
+    // gentle type-in effect for the terminal message (no repeating)
+    (function(){
+      const pre = document.getElementById('message');
+      const full = pre.textContent;
+      pre.textContent = '';
+      let i = 0;
+      const speed = 18; // ms per char
+      function step(){
+        i++;
+        pre.textContent = full.slice(0,i);
+        if(i < full.length) requestAnimationFrame(()=>setTimeout(step,speed));
+      }
+      // start after a short delay so hearts are visible
+      setTimeout(step,450);
+    })();
+  </script>
+  <audio src="mahhala.mp3" autoplay loop></audio>
+</body>
+</html>
